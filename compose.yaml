@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    tty: true
+    volumes:
+      - ./app:/app
+    environment:
+      - WATCHPACK_POLLING=true
+      - NODE_OPTIONS=--openssl-legacy-provider
+    ports:
+      - "8080:8080"
